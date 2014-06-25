@@ -2,17 +2,19 @@ $(document).ready(function(){
 
 	var counter = 0;
 	function addInput(){
-		counter++;
 		var item = $("#item-entry").val();
-		$("#list-items").prepend("<li class=\"group\"><input id=\"check-box" + counter + "\" type=\"checkbox\"><label for=\"check-box" + counter + "\"></label>" + item + "<div class=\"delete_row\">X</div></li>");
-		$("#item-entry").val("");
+			if(jQuery.trim(item).length != 0)
+			{
+				counter++;
+				$("#list-items").prepend("<li class=\"group\"><input id=\"check-box" + counter + "\" type=\"checkbox\"><label for=\"check-box" + counter + "\"></label>" + item + "<div class=\"delete_row\">X</div></li>");
+			}
+			$("#item-entry").val("");
 	}
 
 	$("#list-items").sortable();
-
 	
 	$(this).on("click", "#plus-sign", function() {
-		addInput();
+			addInput();
 	});
 
 	$(this).on("keyup", "#item-entry", function(event)
@@ -20,7 +22,7 @@ $(document).ready(function(){
   		if ( event.which == 13 ) 
   		{
    			addInput();
-		 }
+		}
   	});
 
 	$(this).on("click", "#widget", function() {
