@@ -185,6 +185,7 @@ footer {
 footer h1 {
 	font-size:32px;
 	font-family: 'Play', sans-serif;
+	color: #663399;
 }
 
 #show-instructions, #hide-instructions {
