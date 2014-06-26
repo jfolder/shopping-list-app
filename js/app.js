@@ -6,7 +6,7 @@ $(document).ready(function(){
 			if(jQuery.trim(item).length != 0)
 			{
 				counter++;
-				$("#list-items").prepend("<li class=\"group\"><input id=\"check-box" + counter + "\" type=\"checkbox\"><label for=\"check-box" + counter + "\"></label>" + item + "<div class=\"delete_row\">X</div></li>");
+				$("#list-items").prepend("<li id=\"item-row\" class=\"group\"><input id=\"check-box" + counter + "\" type=\"checkbox\"><label  class=\"checkbox_label\" for=\"check-box" + counter + "\"></label><span class=\"item_text\">" + item + "</span><div class=\"delete_row\">X</div></li>");
 			}
 			$("#item-entry").val("");
 	}
@@ -14,7 +14,7 @@ $(document).ready(function(){
 	$("#list-items").sortable();
 	
 	$(this).on("click", "#plus-sign", function() {
-			addInput();
+		addInput();
 	});
 
 	$(this).on("keyup", "#item-entry", function(event)
@@ -29,20 +29,31 @@ $(document).ready(function(){
 		$("#optional-input").slideToggle();
 	});
 
-	$(this).on("click", ".all", function(){
+	$(this).on("click", ".checkbox_label", function() {
+		if(!($(this).prev().is(":checked")))
+		{
+			$(this).next().wrap("<strike></strike>");
+		}
+		else
+		{
+			$(this).next().children(".item_text").unwrap();
+		}
+	});
+
+	$(this).on("click", ".all", function() {
 		$("input[id^='check-box']").closest("li").show();
 		$(".all").css({"font-weight":"bold"});
 		$(":not(li.all)").css({"font-weight":"normal"});
 	});
 
-	$(this).on("click", ".completed", function(){
+	$(this).on("click", ".completed", function() {
 		$("input[id^='check-box']:checked").closest("li").show();
 		$("input[id^='check-box']:not(:checked)").closest("li").hide();
 		$(".completed").css({"font-weight":"bold"});
 		$(":not(li.completed)").css({"font-weight":"normal"});
 	});
 
-	$("#optional-input").on("click", ".pending", function(){
+	$("#optional-input").on("click", ".pending", function() {
 		$("input[id^='check-box']:checked").closest("li").hide();
 		$("input[id^='check-box']:not(:checked)").closest("li").show();
 		$(".pending").css({"font-weight":"bold"});

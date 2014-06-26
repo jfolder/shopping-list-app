@@ -159,7 +159,7 @@ input[type=checkbox]:checked + label {
 	background-color: white;
 }
 
-label + div {
+div.delete_row {
 	width:25px;
 	float:right;
 	text-align: center;
@@ -169,7 +169,7 @@ label + div {
 	color:#777;
 }
 
-label + div:hover {
+div.delete_row:hover {
 	color:#000;
 }
 
