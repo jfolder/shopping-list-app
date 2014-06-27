@@ -16,6 +16,16 @@
 	</head>
 	<body>
 		<div class="container">
+			<header class="group">
+				<ul id="optional-input">
+					<li class="all">All</li>
+					<li>|</li>
+					<li class="pending">Pending</li>
+					<li>|</li>
+					<li class="completed">Completed</li>
+					<li class="add_as_category">Add Input As Category</li>
+				</ul>
+			</header>
 			<nav class="group">
 				<ul id="main-input" class="group">
 					<li>
@@ -28,29 +38,29 @@
 						<button id="plus-sign" type="button">+</button>
 					</li>
 				</ul> 
-				<ul id="optional-input">
-					<li class="all">All</li>
-					<li>|</li>
-					<li class="pending">Pending</li>
-					<li>|</li>
-					<li class="completed">Completed</li>
+
+				<ul id="categories">
+					<li class="category" data-category="GoodWill">Good Will</li>
+					<li class="category" data-category="Walmart">Walmart</li>
+					<li class="category" id="selected" data-category="HealthStore">Health Store</li>
 				</ul>
+
 			</nav>
 			<section>
 				<ul id="list-items">
-					<li id="item-row" class="group">
+					<li id="item-row" class="group" data-category="GoodWill">
 						<input id="check-box_1" type="checkbox">
 						<label class="checkbox_label" for="check-box_1"></label>
 						<span class="item_text">Celery</span>
 						<div class="delete_row">X</div>
 					</li>
-					<li id="item-row" class="group">
+					<li id="item-row" class="group" data-category="GoodWill">
 						<input id="check-box_2" type="checkbox">
 						<label class="checkbox_label" for="check-box_2"></label>
 						<span class="item_text">Cucumbers</span>
 						<div class="delete_row">X</div>
 					</li>
-					<li id="item-row" class="group">
+					<li id="item-row" class="group" data-category="Walmart">
 						<input id="check-box_3" type="checkbox">
 						<label class="checkbox_label" for="check-box_3"></label>
 						<span class="item_text">Spinach</span>
@@ -59,13 +69,15 @@
 				</ul> 
 			</section>
 			<footer>
-				<h1>Checklist Tally 1.0</h1>
+				<h1>Checklist Tally 2.0</h1>
 				<div id="toggle-instructions">
 					<div id="show-instructions">Show Instructions</div>
 					<div id="hide-instructions">Hide Instructins</div>
 					<ol id="instructions">
-						<li>Type item into input box, press enter</li>
-						<li>Click the star to display more options</li>
+						<li>Type item into input box</li>
+						<li>Click "Add item as category, or press enter or the plus(+) sign</li>
+						<li>Click the star to display categories</li>
+						<li>Click "All", "Pending", or "Completed" to display checklist status</li>
 						<li>Drag items to change list order</li>
 						<li>Click red box to check off items</li>
 					</ol>

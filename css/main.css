@@ -36,6 +36,34 @@ html, body {
 }
 
 /************************************************
+HEADER
+*************************************************/
+
+#optional-input {
+	display:block;
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#optional-input li {
+	float:left;
+	height:25px;
+	margin-right:5px;
+	cursor: pointer;
+	font-size: .7em;
+}
+
+#optional-input li:last-child {
+	float: right;
+	margin:0;
+}
+
+.add_as_category {
+	text-decoration: underline;
+}
+
+/************************************************
 NAVIGATION: Main
 *************************************************/
 
@@ -75,6 +103,11 @@ NAVIGATION: Main
  	line-height:20px;
  }
 
+ #plus-sign {
+ 	font-size: .7em;
+ 	line-height:.9em;
+ }
+
 #widget, #plus-sign
 {
 	width:100%;
@@ -83,24 +116,23 @@ NAVIGATION: Main
 }
 
 /************************************************
-NAVIGATION: Optional
+NAVIGATION: Categories
 *************************************************/
-
-#optional-input {
-	display:block;
+#categories {
 	list-style-type: none;
-	margin: 0 auto;
-	padding: 0 0 0 70px;
-	display:none;
+	margin: 0;
+	padding:0;
 }
 
-#optional-input li {
-	float:left;
-	height:25px;
-	margin-right:10px;
-	cursor: pointer;
-	font-size: .7em;
+#categories li {
+	float: left;
+	border:1px solid black;
+	margin: 0 5px 10px 0;
+	padding:2px;
+	cursor:pointer;
 }
+
+
 
 
 /************************************************
