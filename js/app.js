@@ -8,7 +8,6 @@ $(document).ready(function(){
 		if(jQuery.trim(item).length != 0)
 		{
 			counter++;
-			alert(selected_category);
 			$("#list-items").prepend("<li id=\"item-row\" class=\"group\" data-category=" + selected_category + "><input id=\"check-box" + counter + "\" type=\"checkbox\"><label  class=\"checkbox_label\" for=\"check-box" + counter + "\"></label><span class=\"item_text\">" + item + "</span><div class=\"delete_row\">X</div></li>");
 		}
 		$("#item-entry").val("");
@@ -25,7 +24,6 @@ $(document).ready(function(){
 			$("#categories").prepend("<li class=\"category\" data-category=" + random_number + ">" + category + "</li>");
 		}
 		$("#item-entry").val("");
-		alert(random_number);
 	}
 
 	$("#list-items").sortable();
@@ -70,6 +68,11 @@ $(document).ready(function(){
 		{
 			$(this).next().children(".item_text").unwrap();
 		}
+	});
+
+	$(this).on("dblclick", ".category", function() {
+		var current_category = $(this).data("category");
+		$("li[data-category='" + current_category + "']").remove();
 	});
 
 	$(this).on("click", ".all", function() {
