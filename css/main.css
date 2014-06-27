@@ -39,14 +39,14 @@ html, body {
 HEADER
 *************************************************/
 
-#optional-input {
+#status {
 	display:block;
 	list-style-type: none;
 	margin: 0 auto;
 	padding: 0;
 }
 
-#optional-input li {
+#status li {
 	float:left;
 	height:25px;
 	margin-right:5px;
@@ -54,7 +54,11 @@ HEADER
 	font-size: .7em;
 }
 
-#optional-input li:last-child {
+#status li:first-child {
+	font-weight: bold;
+}
+
+#status li:last-child {
 	float: right;
 	margin:0;
 }

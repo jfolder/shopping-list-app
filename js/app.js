@@ -90,7 +90,7 @@ $(document).ready(function(){
 		$(".category").css({"background-color":"white"});
 	});
 
-	$("#optional-input").on("click", ".pending", function() {
+	$("#status").on("click", ".pending", function() {
 		$("input[id^='check-box']:checked").closest("li").hide();
 		$("input[id^='check-box']:not(:checked)").closest("li").show();
 		$(".pending").css({"font-weight":"bold"});
