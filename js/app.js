@@ -11,6 +11,7 @@ $(document).ready(function(){
 			$("#list-items").prepend("<li id=\"item-row\" class=\"group\" data-category=" + selected_category + "><input id=\"check-box" + counter + "\" type=\"checkbox\"><label  class=\"checkbox_label\" for=\"check-box" + counter + "\"></label><span class=\"item_text\">" + item + "</span><div class=\"delete_row\">X</div></li>");
 		}
 		$("#item-entry").val("");
+		$(".all, .pending, .completed").css({"font-weight":"normal"});
 	}
 
 	function addCategory() {
@@ -24,6 +25,7 @@ $(document).ready(function(){
 			$("#categories").prepend("<li class=\"category\" data-category=" + random_number + ">" + category + "</li>");
 		}
 		$("#item-entry").val("");
+		$(".all, .pending, .completed").css({"font-weight":"normal"});
 	}
 
 	$("#list-items").sortable();
